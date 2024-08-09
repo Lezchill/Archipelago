@@ -27,6 +27,7 @@ from ..strings.seed_names import Seed, TreeSeed
 from ..strings.skill_names import Skill, ModSkill
 from ..strings.special_order_names import SpecialOrder
 from ..strings.villager_names import NPC, ModNPC
+from ..strings.season_names import Season
 
 
 class CraftingRecipe:
@@ -54,9 +55,9 @@ def friendship_recipe(name: str, friend: str, hearts: int, ingredients: Dict[str
     return create_recipe(name, ingredients, source, mod_name)
 
 
-def cutscene_recipe(name: str, region: str, friend: str, hearts: int, ingredients: Dict[str, int]) -> CraftingRecipe:
-    source = CutsceneSource(region, friend, hearts)
-    return create_recipe(name, ingredients, source)
+def cutscene_recipe(name: str, region: str, friend: str, hearts: int, season: str, ingredients: Dict[str, int], mod_name: Optional[str] = None) -> CraftingRecipe:
+    source = CutsceneSource(region, friend, hearts, season)
+    return create_recipe(name, ingredients, source, mod_name)
 
 
 def skill_recipe(name: str, skill: str, level: int, ingredients: Dict[str, int], mod_name: Optional[str] = None) -> CraftingRecipe:
@@ -173,7 +174,7 @@ ancient_seeds = ap_recipe(WildSeeds.ancient, {Artifact.ancient_seed: 1})
 grass_starter = shop_recipe(WildSeeds.grass_starter, Region.pierre_store, 1000, {Material.fiber: 10})
 blue_grass_starter = ap_recipe(WildSeeds.blue_grass_starter, {Material.fiber: 25, Material.moss: 10, ArtisanGood.mystic_syrup: 1})
 for wild_seeds in [WildSeeds.spring, WildSeeds.summer, WildSeeds.fall, WildSeeds.winter]:
-    tea_sapling = cutscene_recipe(WildSeeds.tea_sapling, Region.sunroom, NPC.caroline, 2, {wild_seeds: 2, Material.fiber: 5, Material.wood: 5})
+    tea_sapling = cutscene_recipe(WildSeeds.tea_sapling, Region.sunroom, NPC.caroline, 2, Season.all, {wild_seeds: 2, Material.fiber: 5, Material.wood: 5})
 fiber_seeds = special_order_recipe(WildSeeds.fiber, SpecialOrder.community_cleanup, {Seed.mixed: 1, Material.sap: 5, Material.clay: 1})
 
 wood_floor = shop_recipe(Floor.wood, Region.carpenter, 100, {Material.wood: 1})
@@ -201,7 +202,7 @@ barbed_hook = skill_recipe(Fishing.barbed_hook, Skill.fishing, 8, {MetalBar.copp
 magnet = skill_recipe(Fishing.magnet, Skill.fishing, 9, {MetalBar.iron: 1})
 bait = skill_recipe(Fishing.bait, Skill.fishing, 2, {Loot.bug_meat: 1})
 deluxe_bait = skill_recipe(Fishing.deluxe_bait, Skill.fishing, 4, {Fishing.bait: 5, Material.moss: 2})
-wild_bait = cutscene_recipe(Fishing.wild_bait, Region.tent, NPC.linus, 4, {Material.fiber: 10, Loot.bug_meat: 5, Loot.slime: 5})
+wild_bait = cutscene_recipe(Fishing.wild_bait, Region.tent, NPC.linus, 4, Season.all, {Material.fiber: 10, Loot.bug_meat: 5, Loot.slime: 5})
 magic_bait = ap_recipe(Fishing.magic_bait, {Ore.radioactive: 1, Loot.bug_meat: 3})
 crab_pot = skill_recipe(Machine.crab_pot, Skill.fishing, 3, {Material.wood: 40, MetalBar.iron: 3})
 
@@ -269,8 +270,8 @@ deluxe_worm_bin = skill_recipe(Machine.deluxe_worm_bin, Skill.fishing, 8, {Machi
 tub_o_flowers = festival_shop_recipe(Furniture.tub_o_flowers, LogicRegion.flower_dance, 2000,
                                      {Material.wood: 15, Seed.tulip: 1, Seed.jazz: 1, Seed.poppy: 1, Seed.spangle: 1})
 wicked_statue = shop_recipe(Furniture.wicked_statue, Region.sewer, 1000, {Material.stone: 25, Material.coal: 5})
-flute_block = cutscene_recipe(Furniture.flute_block, Region.carpenter, NPC.robin, 6, {Material.wood: 10, Ore.copper: 2, Material.fiber: 20})
-drum_block = cutscene_recipe(Furniture.drum_block, Region.carpenter, NPC.robin, 6, {Material.stone: 10, Ore.copper: 2, Material.fiber: 20})
+flute_block = cutscene_recipe(Furniture.flute_block, Region.carpenter, NPC.robin, 6, Season.all, {Material.wood: 10, Ore.copper: 2, Material.fiber: 20})
+drum_block = cutscene_recipe(Furniture.drum_block, Region.carpenter, NPC.robin, 6, Season.all, {Material.stone: 10, Ore.copper: 2, Material.fiber: 20})
 
 chest = starter_recipe(Storage.chest, {Material.wood: 50})
 stone_chest = special_order_recipe(Storage.stone_chest, SpecialOrder.robins_resource_rush, {Material.stone: 50})
@@ -289,7 +290,7 @@ staircase = skill_recipe(Craftable.staircase, Skill.mining, 2, {Material.stone: 
 explosive_ammo = skill_recipe(Craftable.explosive_ammo, Skill.combat, 8, {MetalBar.iron: 1, Material.coal: 2})
 transmute_fe = skill_recipe(Craftable.transmute_fe, Skill.mining, 4, {MetalBar.copper: 3})
 transmute_au = skill_recipe(Craftable.transmute_au, Skill.mining, 7, {MetalBar.iron: 2})
-mini_jukebox = cutscene_recipe(Craftable.mini_jukebox, Region.saloon, NPC.gus, 5, {MetalBar.iron: 2, ArtisanGood.battery_pack: 1})
+mini_jukebox = cutscene_recipe(Craftable.mini_jukebox, Region.saloon, NPC.gus, 5, Season.all, {MetalBar.iron: 2, ArtisanGood.battery_pack: 1})
 mini_obelisk = special_order_recipe(Craftable.mini_obelisk, SpecialOrder.a_curious_substance, {Material.hardwood: 30, Loot.solar_essence: 20, MetalBar.gold: 3})
 farm_computer = special_order_recipe(Craftable.farm_computer, SpecialOrder.aquatic_overpopulation,
                                      {Artifact.dwarf_gadget: 1, ArtisanGood.battery_pack: 1, MetalBar.quartz: 10})
@@ -370,5 +371,8 @@ composter = skill_recipe(ModMachine.composter, ModSkill.binning, 4, {Material.wo
 recycling_bin = skill_recipe(ModMachine.recycling_bin, ModSkill.binning, 7, {MetalBar.iron: 3, Material.fiber: 10, MetalBar.gold: 2}, ModNames.binning_skill)
 advanced_recycling_machine = skill_recipe(ModMachine.advanced_recycling_machine, ModSkill.binning, 9,
                                           {MetalBar.iridium: 5, ArtisanGood.battery_pack: 2, MetalBar.quartz: 10}, ModNames.binning_skill)
+
+#Pokemon Craftable
+blue_orb = cutscene_recipe(ModCraftable.blue_orb, Region.beach, NPC.willy, 1, Season.summer, {Mineral.aquamarine: 3, Mineral.kyanite: 1, Mineral.diamond: 1}, ModNames.pokemon_fish)
 
 all_crafting_recipes_by_name = {recipe.item: recipe for recipe in all_crafting_recipes}

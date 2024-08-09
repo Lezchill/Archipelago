@@ -189,6 +189,7 @@ class ModCraftable:
     trex_skeleton_l = "T-Rex Skeleton L"
     trex_skeleton_m = "T-Rex Skeleton M"
     trex_skeleton_r = "T-Rex Skeleton R"
+    blue_orb = "Blue Orb"
 
 
 class ModMachine:

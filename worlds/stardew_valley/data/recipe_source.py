@@ -73,10 +73,12 @@ class FriendshipSource(RecipeSource):
 
 class CutsceneSource(FriendshipSource):
     region: str
+    season: str
 
-    def __init__(self, region: str, friend: str, hearts: int):
+    def __init__(self, region: str, friend: str, hearts: int, season:str):
         super().__init__(friend, hearts)
         self.region = region
+        self.season = season
 
     def __repr__(self):
         return f"CutsceneSource at {self.region}"
