@@ -13,6 +13,7 @@ from ...logic.time_logic import TimeLogicMixin
 from ...stardew_rule import StardewRule
 from ...strings.animal_product_names import AnimalProduct
 from ...strings.artisan_good_names import ArtisanGood
+from ...strings.craftable_names import ModCraftable
 from ...strings.crop_names import Fruit, SVEFruit, SVEVegetable, Vegetable
 from ...strings.fertilizer_names import Fertilizer
 from ...strings.food_names import Meal, Beverage
@@ -45,6 +46,7 @@ class ModQuestLogic(BaseLogic[Union[HasLogicMixin, QuestLogicMixin, ReceivedLogi
         quests.update(self._get_distant_lands_quest_rules())
         quests.update(self._get_boarding_house_quest_rules())
         quests.update((self._get_hat_mouse_quest_rules()))
+        quests.update(self._get_pokemon_fish_quest_rules())
         return quests
 
     def _get_juna_quest_rules(self):
@@ -125,4 +127,12 @@ class ModQuestLogic(BaseLogic[Union[HasLogicMixin, QuestLogicMixin, ReceivedLogi
 
         return {
             ModQuest.HatMouseHat: self.logic.relationship.has_hearts(ModNPC.lacey, 2) & self.logic.time.has_lived_months(4)
+        }
+
+    def _get_pokemon_fish_quest_rules(self):
+        if ModNames.pokemon_fish not in self.options.mods:
+            return{}
+
+        return {
+            ModQuest.QuestForKyogre: self.logic.ability.can_fish_perfectly() & self.logic.has(ModCraftable.blue_orb)
         }

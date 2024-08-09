@@ -63,7 +63,7 @@ from ..strings.currency_names import Currency
 from ..strings.decoration_names import Decoration
 from ..strings.fertilizer_names import Fertilizer, SpeedGro, RetainingSoil
 from ..strings.festival_check_names import FestivalCheck
-from ..strings.fish_names import Fish, Trash, WaterItem, WaterChest
+from ..strings.fish_names import Fish, Trash, WaterItem, WaterChest, PKMNFish
 from ..strings.flower_names import Flower
 from ..strings.food_names import Meal, Beverage
 from ..strings.forageable_names import Forageable
@@ -232,6 +232,10 @@ class StardewLogic(ReceivedLogicMixin, HasLogicMixin, RegionLogicMixin, Travelin
             Fish.periwinkle: self.skill.can_crab_pot_at(Region.town),
             Fish.shrimp: self.skill.can_crab_pot_at(Region.beach),
             Fish.snail: self.skill.can_crab_pot_at(Region.town),
+            PKMNFish.clamperl: self.skill.can_crab_pot_at(Region.beach),
+            PKMNFish.clamperl_shiny: self.skill.can_crab_pot_at(Region.beach),
+            PKMNFish.shellder: self.skill.can_crab_pot_at(Region.beach),
+            PKMNFish.shellder_shiny: self.skill.can_crab_pot_at(Region.beach),
             Fishing.curiosity_lure: self.monster.can_kill(self.monster.all_monsters_by_name[Monster.mummy]),
             Fishing.lead_bobber: self.skill.has_level(Skill.fishing, 6) & self.money.can_spend_at(Region.fish_shop, 200),
             Forageable.hay: self.building.has_building(Building.silo) & self.tool.has_tool(Tool.scythe), #

@@ -777,7 +777,7 @@ class Mods(OptionSet):
                   ModNames.jasper, ModNames.alec, ModNames.yoba, ModNames.eugene,
                   ModNames.wellwick, ModNames.ginger, ModNames.shiko, ModNames.delores,
                   ModNames.ayeisha, ModNames.riley, ModNames.skull_cavern_elevator, ModNames.sve, ModNames.distant_lands,
-                  ModNames.alecto, ModNames.lacey, ModNames.boarding_house}.difference(disabled_mods)
+                  ModNames.alecto, ModNames.lacey, ModNames.boarding_house, ModNames.pokemon_fish}.difference(disabled_mods)
 
 
 class BundlePlando(OptionSet):

@@ -67,5 +67,20 @@ class DistantLandsForageable:
     brown_amanita = "Brown Amanita"
     swamp_herb = "Swamp Herb"
 
+class PKMNForage:
+    corsola = "Corsola"
+    corsola_shiny = "Shiny Corsola"
+    corsola_galarian = "Galarian Corsola"
+    mareanie = "Mareanie"
+    mareanie_shiny = "Shiny Mareanie"
+    pyukumuku = "Pyukumuku"
+    pyukumuku_shiny = "Shiny Pyukumuku"
+    sandygast = "Sandygast"
+    sandygast_shiny = "Shiny Sandygast"
+    staryu = "Staryu"
+    staryu_shiny = "Shiny Staryu"
+    stunfisk = "Stunfisk"
+    wiglett = "Wiglett"
+    wiglett_shiny = "Shiny Wiglett"
 
 all_edible_mushrooms = tuple(all_edible_mushrooms)

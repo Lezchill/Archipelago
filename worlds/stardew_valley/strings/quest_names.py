@@ -72,3 +72,4 @@ class ModQuest:
     WitchOrder = "Witch's order"
     PumpkinSoup = "Pumpkin Soup"
     HatMouseHat = "Hats for the Hat Mouse"
+    QuestForKyogre = "Quest For Kyogre"

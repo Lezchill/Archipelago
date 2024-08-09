@@ -45,6 +45,7 @@ class Mineral:
     emerald = "Emerald"
     amethyst = "Amethyst"
     tigerseye = "Tigerseye"
+    kyanite = "Kyanite"
 
 
 class Artifact:

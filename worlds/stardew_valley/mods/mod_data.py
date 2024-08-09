@@ -26,3 +26,4 @@ class ModNames:
     distant_lands = "Distant Lands - Witch Swamp Overhaul"
     lacey = "Hat Mouse Lacey"
     boarding_house = "Boarding House and Bus Stop Extension"
+    pokemon_fish = "Pokemon Fish"

@@ -3,7 +3,7 @@ from typing import Tuple, Union, Optional
 
 from . import season_data as season
 from ..mods.mod_data import ModNames
-from ..strings.fish_names import Fish, SVEFish, DistantLandsFish
+from ..strings.fish_names import Fish, SVEFish, DistantLandsFish, PKMNFish
 from ..strings.region_names import Region, SVERegion, LogicRegion
 
 
@@ -173,3 +173,42 @@ shrimp = create_fish(Fish.shrimp, ocean, season.all_seasons, -1)
 snail = create_fish(Fish.snail, fresh_water, season.all_seasons, -1)
 
 vanilla_legendary_fish = [angler, crimsonfish, glacierfish, legend, mutant_carp]
+
+#Pokemon Fish
+alomomola = create_fish(PKMNFish.alomomola, ocean, (season.spring, season.summer), 15, mod_name=ModNames.pokemon_fish)
+barboach = create_fish(PKMNFish.barboach, town_river, (season.summer, season.winter), 25, mod_name=ModNames.pokemon_fish)
+chi_yu = create_fish(PKMNFish.chi_yu, ocean, season.summer, 110, mod_name=ModNames.pokemon_fish)
+dratini = create_fish(PKMNFish.dratini, secret_woods, (season.spring, season.summer), 50, mod_name=ModNames.pokemon_fish)
+feebas = create_fish(PKMNFish.feebas, ocean, (season.spring, season.summer), 15, mod_name=ModNames.pokemon_fish)
+frillish_female = create_fish(PKMNFish.frillish_female, ocean, (season.summer, season.winter), 30, mod_name=ModNames.pokemon_fish)
+frillish_male = create_fish(PKMNFish.frillish_male, ocean, (season.summer, season.winter), 30, mod_name=ModNames.pokemon_fish)
+finneon = create_fish(PKMNFish.finneon, ocean, (season.spring, season.summer), 10, mod_name=ModNames.pokemon_fish)
+goldeen = create_fish(PKMNFish.goldeen, forest_river, (season.spring, season.summer), 10, mod_name=ModNames.pokemon_fish)
+grimer = create_fish(PKMNFish.grimer, sewers, season.all_seasons, 5, mod_name=ModNames.pokemon_fish)
+horsea = create_fish(PKMNFish.horsea, ocean, (season.summer, season.fall), 20, mod_name=ModNames.pokemon_fish)
+inkay = create_fish(PKMNFish.inkay, ocean, season.winter, 50, mod_name=ModNames.pokemon_fish)
+kyogre = create_fish(PKMNFish.kyogre, ocean, season.summer, 120, mod_name=ModNames.pokemon_fish)
+lotad = create_fish(PKMNFish.lotad, secret_woods, season.summer, 15, mod_name=ModNames.pokemon_fish)
+lotad_shiny = create_fish(PKMNFish.lotad_shiny, secret_woods, season.summer, 15, mod_name=ModNames.pokemon_fish)
+luvdisc = create_fish(PKMNFish.luvdisc, ocean, (season.spring, season.summer), 10, mod_name=ModNames.pokemon_fish)
+luvdisc_shiny = create_fish(PKMNFish.luvdisc_shiny, ocean, (season.spring, season.summer), 10, mod_name=ModNames.pokemon_fish)
+magikarp = create_fish(PKMNFish.magikarp, forest_river, season.all_seasons, 5, mod_name=ModNames.pokemon_fish)
+magikarp_shiny = create_fish(PKMNFish.magikarp_shiny, forest_river, season.all_seasons, 5, mod_name=ModNames.pokemon_fish)
+poliwag = create_fish(PKMNFish.poliwag, secret_woods, season.not_winter, 10, mod_name=ModNames.pokemon_fish)
+surskit = create_fish(PKMNFish.surskit, secret_woods, (season.spring, season.summer), 10, mod_name=ModNames.pokemon_fish)
+tadbulb = create_fish(PKMNFish.tadbulb, secret_woods, season.not_winter, 15, mod_name=ModNames.pokemon_fish)
+tatsugiri_curly = create_fish(PKMNFish.tatsugiri_curly, ocean, season.fall, 30, mod_name=ModNames.pokemon_fish)
+tatsugiri_droopy = create_fish(PKMNFish.tatsugiri_droopy, ocean, season.fall, 30, mod_name=ModNames.pokemon_fish)
+tatsugiri_stretchy = create_fish(PKMNFish.tatsugiri_stretchy, ocean, season.fall, 30, mod_name=ModNames.pokemon_fish)
+tentacool = create_fish(PKMNFish.tentacool, ocean, season.summer, 30, mod_name=ModNames.pokemon_fish)
+trubbish = create_fish(PKMNFish.trubbish, sewers, season.all_seasons, 5, mod_name=ModNames.pokemon_fish)
+tympole = create_fish(PKMNFish.tympole, secret_woods, season.not_winter, 15, mod_name=ModNames.pokemon_fish)
+tynamo = create_fish(PKMNFish.tynamo, ocean, season.not_winter, 20, mod_name=ModNames.pokemon_fish)
+wishiwashi = create_fish(PKMNFish.wishiwashi, ocean, season.summer, 20, mod_name=ModNames.pokemon_fish)
+wooper = create_fish(PKMNFish.wooper, mountain_lake, season.not_winter, 25, mod_name=ModNames.pokemon_fish)
+wooper_shiny = create_fish(PKMNFish.wooper_shiny, mountain_lake, season.not_winter, 25, mod_name=ModNames.pokemon_fish)
+#Pokemon Crab Pot Fish
+clamperl = create_fish(PKMNFish.clamperl, ocean, season.all_seasons, -1, mod_name=ModNames.pokemon_fish)
+clamperl_shiny = create_fish(PKMNFish.clamperl_shiny, ocean, season.all_seasons, -1, mod_name=ModNames.pokemon_fish)
+shellder = create_fish(PKMNFish.shellder, ocean, season.all_seasons, -1, mod_name=ModNames.pokemon_fish)
+shellder_shiny = create_fish(PKMNFish.shellder_shiny, ocean, season.all_seasons, -1, mod_name=ModNames.pokemon_fish)
