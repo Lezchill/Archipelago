@@ -4,27 +4,27 @@ from ...mods.mod_data import ModNames
 from ...data import fish_data
 from ...data.harvest import ForagingSource
 from ...strings.fish_names import PKMNFish
-from ...strings.forageable_names import PKMNForage
+from ...strings.forageable_names import PKMNFishForage
 from ...strings.season_names import Season
 from ...strings.region_names import Region
 
 register_mod_content_pack(ContentPack(
     ModNames.pokemon_fish,
     harvest_sources={
-        PKMNForage.corsola: (ForagingSource(seasons=(Season.spring, Season.summer), regions=(Region.beach,)),),
-        PKMNForage.corsola_shiny: (ForagingSource(seasons=(Season.spring, Season.summer), regions=(Region.beach,)),),
-        PKMNForage.corsola_galarian: (ForagingSource(seasons=(Season.winter,), regions=(Region.beach,)),),
-        PKMNForage.mareanie: (ForagingSource(seasons=(Season.spring, Season.summer), regions=(Region.beach,)),),
-        PKMNForage.mareanie_shiny: (ForagingSource(seasons=(Season.spring, Season.summer), regions=(Region.beach,)),),
-        PKMNForage.pyukumuku: (ForagingSource(seasons=(Season.summer,), regions=(Region.beach,)),),
-        PKMNForage.pyukumuku_shiny: (ForagingSource(seasons=(Season.summer,), regions=(Region.beach,)),),
-        PKMNForage.sandygast: (ForagingSource(seasons=(Season.summer,), regions=(Region.beach,)),),
-        PKMNForage.sandygast_shiny: (ForagingSource(seasons=(Season.summer,), regions=(Region.beach,)),),
-        PKMNForage.staryu: (ForagingSource(seasons=(Season.not_winter), regions=(Region.beach,)),),
-        PKMNForage.staryu_shiny: (ForagingSource(seasons=(Season.not_winter), regions=(Region.beach,)),),
-        PKMNForage.stunfisk: (ForagingSource(seasons=(Season.fall, Season.winter), regions=(Region.beach,)),),
-        PKMNForage.wiglett: (ForagingSource(seasons=(Season.spring, Season.summer), regions=(Region.beach,)),),
-        PKMNForage.wiglett_shiny: (ForagingSource(seasons=(Season.spring, Season.summer), regions=(Region.beach,)),),
+        PKMNFishForage.corsola: (ForagingSource(seasons=(Season.spring, Season.summer), regions=(Region.beach,)),),
+        PKMNFishForage.corsola_shiny: (ForagingSource(seasons=(Season.spring, Season.summer), regions=(Region.beach,)),),
+        PKMNFishForage.corsola_galarian: (ForagingSource(seasons=(Season.winter,), regions=(Region.beach,)),),
+        PKMNFishForage.mareanie: (ForagingSource(seasons=(Season.spring, Season.summer), regions=(Region.beach,)),),
+        PKMNFishForage.mareanie_shiny: (ForagingSource(seasons=(Season.spring, Season.summer), regions=(Region.beach,)),),
+        PKMNFishForage.pyukumuku: (ForagingSource(seasons=(Season.summer,), regions=(Region.beach,)),),
+        PKMNFishForage.pyukumuku_shiny: (ForagingSource(seasons=(Season.summer,), regions=(Region.beach,)),),
+        PKMNFishForage.sandygast: (ForagingSource(seasons=(Season.summer,), regions=(Region.beach,)),),
+        PKMNFishForage.sandygast_shiny: (ForagingSource(seasons=(Season.summer,), regions=(Region.beach,)),),
+        PKMNFishForage.staryu: (ForagingSource(seasons=(Season.not_winter), regions=(Region.beach,)),),
+        PKMNFishForage.staryu_shiny: (ForagingSource(seasons=(Season.not_winter), regions=(Region.beach,)),),
+        PKMNFishForage.stunfisk: (ForagingSource(seasons=(Season.fall, Season.winter), regions=(Region.beach,)),),
+        PKMNFishForage.wiglett: (ForagingSource(seasons=(Season.spring, Season.summer), regions=(Region.beach,)),),
+        PKMNFishForage.wiglett_shiny: (ForagingSource(seasons=(Season.spring, Season.summer), regions=(Region.beach,)),),
     },
     fishes=(
         fish_data.alomomola,

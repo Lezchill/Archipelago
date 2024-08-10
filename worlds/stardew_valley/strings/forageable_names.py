@@ -67,7 +67,7 @@ class DistantLandsForageable:
     brown_amanita = "Brown Amanita"
     swamp_herb = "Swamp Herb"
 
-class PKMNForage:
+class PKMNFishForage:
     corsola = "Corsola"
     corsola_shiny = "Shiny Corsola"
     corsola_galarian = "Galarian Corsola"
