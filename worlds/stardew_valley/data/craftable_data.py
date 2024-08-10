@@ -373,6 +373,6 @@ advanced_recycling_machine = skill_recipe(ModMachine.advanced_recycling_machine,
                                           {MetalBar.iridium: 5, ArtisanGood.battery_pack: 2, MetalBar.quartz: 10}, ModNames.binning_skill)
 
 #Pokemon Craftable
-blue_orb = cutscene_recipe(ModCraftable.blue_orb, Region.beach, NPC.willy, 1, Season.summer, {Mineral.aquamarine: 3, Mineral.kyanite: 1, Mineral.diamond: 1}, ModNames.pokemon_fish)
+blue_orb = cutscene_recipe(ModCraftable.blue_orb, Region.beach, NPC.willy, 1, (Season.summer,), {Mineral.aquamarine: 3, Mineral.kyanite: 1, Mineral.diamond: 1}, ModNames.pokemon_fish)
 
 all_crafting_recipes_by_name = {recipe.item: recipe for recipe in all_crafting_recipes}

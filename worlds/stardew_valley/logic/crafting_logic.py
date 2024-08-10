@@ -19,6 +19,7 @@ from ..locations import locations_by_tag, LocationTags
 from ..options import Craftsanity, SpecialOrderLocations, ExcludeGingerIsland, SkillProgression
 from ..stardew_rule import StardewRule, True_, False_
 from ..strings.region_names import Region
+from ..strings.craftable_names import ModCraftable
 
 
 class CraftingLogicMixin(BaseLogicMixin):
@@ -59,6 +60,8 @@ SkillLogicMixin, SpecialOrderLogicMixin, CraftingLogicMixin, QuestLogicMixin]]):
             return self.logic.crafting.received_recipe(recipe.item)
         if isinstance(recipe.source, SpecialOrderSource) and self.options.special_order_locations & SpecialOrderLocations.option_board:
             return self.logic.crafting.received_recipe(recipe.item)
+        if recipe.item == "Blue Orb":
+            return self.logic.crafting.received_recipe(recipe.item)
         return self.logic.crafting.can_learn_recipe(recipe)
 
     @cache_self1
@@ -76,7 +79,7 @@ SkillLogicMixin, SpecialOrderLogicMixin, CraftingLogicMixin, QuestLogicMixin]]):
         if isinstance(recipe.source, MasterySource):
             return self.logic.skill.has_mastery(recipe.source.skill)
         if isinstance(recipe.source, CutsceneSource):
-            return self.logic.region.can_reach(recipe.source.region) & self.logic.relationship.has_hearts(recipe.source.friend, recipe.source.hearts)
+            return self.logic.region.can_reach(recipe.source.region) & self.logic.relationship.has_hearts(recipe.source.friend, recipe.source.hearts) & self.logic.season.has_any(recipe.source.season)
         if isinstance(recipe.source, FriendshipSource):
             return self.logic.relationship.has_hearts(recipe.source.friend, recipe.source.hearts)
         if isinstance(recipe.source, QuestSource):
