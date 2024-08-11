@@ -27,4 +27,6 @@ class AnimalProduct:
     truffle = "Truffle"
     void_egg = "Void Egg"
     wool = "Wool"
-
+    
+class PKMNFishAnimalProduct:    
+    heart_scale = "Heart Scale"

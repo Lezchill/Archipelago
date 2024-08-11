@@ -53,7 +53,7 @@ from ..mods.mod_data import ModNames
 from ..options import ExcludeGingerIsland, FestivalLocations, StardewValleyOptions
 from ..stardew_rule import False_, True_, StardewRule
 from ..strings.animal_names import Animal
-from ..strings.animal_product_names import AnimalProduct
+from ..strings.animal_product_names import AnimalProduct, PKMNFishAnimalProduct
 from ..strings.ap_names.community_upgrade_names import CommunityUpgrade
 from ..strings.artisan_good_names import ArtisanGood
 from ..strings.building_names import Building
@@ -328,6 +328,8 @@ class StardewLogic(ReceivedLogicMixin, HasLogicMixin, RegionLogicMixin, Travelin
             WaterItem.seaweed: self.skill.can_fish(Region.tide_pools),
             WaterItem.white_algae: self.skill.can_fish(Region.mines_floor_20),
             WildSeeds.grass_starter: self.money.can_spend_at(Region.pierre_store, 100),
+
+            PKMNFishAnimalProduct.heart_scale: self.skill.can_fish() & self.building.has_building(Building.fish_pond) & self.has(PKMNFish.luvdisc) & self.logic.has(Fruit.peach),
         })
         # @formatter:on
 
