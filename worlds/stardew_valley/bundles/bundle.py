@@ -5,6 +5,7 @@ from typing import List, Tuple
 
 from .bundle_item import BundleItem
 from ..content import StardewContent
+from ..mods.mod_data import ModNames
 from ..options import BundlePrice, StardewValleyOptions, ExcludeGingerIsland, FestivalLocations
 from ..strings.currency_names import Currency
 
@@ -147,6 +148,10 @@ class DeepBundleTemplate(BundleTemplate):
 
         chosen_items = [item.as_amount(max(1, math.floor(item.amount * price_multiplier))) for item in chosen_items]
         return Bundle(self.room, self.name, chosen_items, number_required)
+
+class PKMNFishBundleTemplate(BundleTemplate):
+    def can_appear(self, options: StardewValleyOptions) -> bool:
+        return ModNames.pokemon_fish in options.mods
 
 
 def get_bundle_final_prices(bundle_price_option: BundlePrice, default_required_items: int, is_currency: bool) -> Tuple[int, float]:

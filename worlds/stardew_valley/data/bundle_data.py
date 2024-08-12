@@ -1,19 +1,19 @@
-from ..bundles.bundle import BundleTemplate, IslandBundleTemplate, DeepBundleTemplate, CurrencyBundleTemplate, MoneyBundleTemplate, FestivalBundleTemplate
+from ..bundles.bundle import BundleTemplate, IslandBundleTemplate, DeepBundleTemplate, CurrencyBundleTemplate, MoneyBundleTemplate, FestivalBundleTemplate, PKMNFishBundleTemplate
 from ..bundles.bundle_item import BundleItem
 from ..bundles.bundle_room import BundleRoomTemplate
 from ..content import content_packs
 from ..content.vanilla.base import all_fruits, all_vegetables, all_edible_mushrooms
 from ..strings.animal_product_names import AnimalProduct
 from ..strings.artisan_good_names import ArtisanGood
-from ..strings.bundle_names import CCRoom, BundleName
+from ..strings.bundle_names import CCRoom, BundleName, PKMNFishBundleName
 from ..strings.craftable_names import Fishing, Craftable, Bomb, Consumable, Lighting
 from ..strings.crop_names import Fruit, Vegetable
 from ..strings.currency_names import Currency
 from ..strings.fertilizer_names import Fertilizer, RetainingSoil, SpeedGro
-from ..strings.fish_names import Fish, WaterItem, Trash, all_fish
+from ..strings.fish_names import Fish, WaterItem, Trash, all_fish, PKMNFish
 from ..strings.flower_names import Flower
 from ..strings.food_names import Beverage, Meal
-from ..strings.forageable_names import Forageable, Mushroom
+from ..strings.forageable_names import Forageable, Mushroom, PKMNFishForage
 from ..strings.geode_names import Geode
 from ..strings.gift_names import Gift
 from ..strings.ingredient_names import Ingredient
@@ -425,6 +425,32 @@ mystery_box = BundleItem(Consumable.mystery_box)
 gold_mystery_box = BundleItem(Consumable.gold_mystery_box, source=BundleItem.Sources.masteries)
 calico_egg = BundleItem(Currency.calico_egg)
 
+alomomola = BundleItem(PKMNFish.alomomola)
+dratini = BundleItem(PKMNFish.dratini)
+goldeen = BundleItem(PKMNFish.goldeen)
+grimer = BundleItem(PKMNFish.grimer)
+inkay = BundleItem(PKMNFish.inkay)
+lotad = BundleItem(PKMNFish.lotad)
+magikarp = BundleItem(PKMNFish.magikarp)
+surskit = BundleItem(PKMNFish.surskit)
+wishiwashi = BundleItem(PKMNFish.wishiwashi)
+
+corsola = BundleItem(PKMNFishForage.corsola)
+corsola_galarian = BundleItem(PKMNFishForage.corsola_galarian)
+mareanie = BundleItem(PKMNFishForage.mareanie)
+pyukumuku = BundleItem(PKMNFishForage.pyukumuku)
+sandygast = BundleItem(PKMNFishForage.sandygast)
+staryu = BundleItem(PKMNFishForage.staryu)
+stunfisk = BundleItem(PKMNFishForage.stunfisk)
+wiglett = BundleItem(PKMNFishForage.wiglett)
+
+corsola_shiny = BundleItem(PKMNFishForage.corsola_shiny)
+luvdisc_shiny = BundleItem(PKMNFish.luvdisc_shiny)
+magikarp_shiny = BundleItem(PKMNFish.magikarp_shiny)
+sandygast_shiny = BundleItem(PKMNFishForage.sandygast_shiny)
+staryu_shiny = BundleItem(PKMNFishForage.staryu_shiny)
+wooper_shiny = BundleItem(PKMNFish.wooper_shiny)
+
 raccoon_crab_pot_fish_items = [periwinkle.as_amount(5), snail.as_amount(5), crayfish.as_amount(5), mussel.as_amount(5),
                                oyster.as_amount(5), cockle.as_amount(5), clam.as_amount(5)]
 raccoon_smoked_fish_items = [BundleItem(ArtisanGood.smoked_fish, flavor=fish) for fish in
@@ -528,12 +554,15 @@ quality_foraging_bundle = BundleTemplate(CCRoom.crafts_room, BundleName.quality_
 green_rain_items = [moss.as_amount(200), fiber.as_amount(200), mossy_seed.as_amount(20), fiddlehead_fern.as_amount(10)]
 green_rain_bundle = BundleTemplate(CCRoom.crafts_room, BundleName.green_rain, green_rain_items, 4, 3)
 
+pokemon_foraging_items = [corsola, corsola_galarian, mareanie, pyukumuku, sandygast, staryu, stunfisk, wiglett]
+pokemon_foraging_bundle =PKMNFishBundleTemplate(CCRoom.crafts_room, PKMNFishBundleName.pokemon_foraging, pokemon_foraging_items, 4, 4)
+
 crafts_room_bundles_vanilla = [spring_foraging_bundle_vanilla, summer_foraging_bundle_vanilla, fall_foraging_bundle_vanilla,
                                winter_foraging_bundle_vanilla, construction_bundle_vanilla, exotic_foraging_bundle_vanilla]
 crafts_room_bundles_thematic = [spring_foraging_bundle_thematic, summer_foraging_bundle_thematic, fall_foraging_bundle_thematic,
                                 winter_foraging_bundle_thematic, construction_bundle_thematic, exotic_foraging_bundle_thematic]
 crafts_room_bundles_remixed = [*crafts_room_bundles_thematic, beach_foraging_bundle, mines_foraging_bundle, desert_foraging_bundle,
-                               island_foraging_bundle, sticky_bundle, forest_bundle, wild_medicine_bundle, quality_foraging_bundle, green_rain_bundle]
+                               island_foraging_bundle, sticky_bundle, forest_bundle, wild_medicine_bundle, quality_foraging_bundle, green_rain_bundle, pokemon_foraging_bundle]
 crafts_room_vanilla = BundleRoomTemplate(CCRoom.crafts_room, crafts_room_bundles_vanilla, 6)
 crafts_room_thematic = BundleRoomTemplate(CCRoom.crafts_room, crafts_room_bundles_thematic, 6)
 crafts_room_remixed = BundleRoomTemplate(CCRoom.crafts_room, crafts_room_bundles_remixed, 6)
@@ -705,13 +734,16 @@ smokeable_fish = [Fish.largemouth_bass, Fish.bream, Fish.bullhead, Fish.chub, Fi
 fish_smoker_items = [BundleItem(ArtisanGood.smoked_fish, flavor=fish) for fish in smokeable_fish]
 fish_smoker_bundle = BundleTemplate(CCRoom.fish_tank, BundleName.fish_smoker, fish_smoker_items, 6, 3)
 
+pokemon_fishing_items = [alomomola, dratini, goldeen, grimer, inkay, lotad, magikarp, surskit, wishiwashi]
+pokemon_fishing_bundle = PKMNFishBundleTemplate(CCRoom.fish_tank, PKMNFishBundleName.pokemon_fishing, pokemon_fishing_items, 4, 4)
+
 fish_tank_bundles_vanilla = [river_fish_bundle_vanilla, lake_fish_bundle_vanilla, ocean_fish_bundle_vanilla,
                              night_fish_bundle_vanilla, crab_pot_bundle_vanilla, specialty_fish_bundle_vanilla]
 fish_tank_bundles_thematic = [river_fish_bundle_thematic, lake_fish_bundle_thematic, ocean_fish_bundle_thematic,
                               night_fish_bundle_thematic, crab_pot_bundle_thematic, specialty_fish_bundle_thematic]
 fish_tank_bundles_remixed = [*fish_tank_bundles_thematic, spring_fish_bundle, summer_fish_bundle, fall_fish_bundle, winter_fish_bundle, trash_bundle,
                              rain_fish_bundle, quality_fish_bundle, master_fisher_bundle, legendary_fish_bundle, tackle_bundle, bait_bundle,
-                             specific_bait_bundle, deep_fishing_bundle, fish_smoker_bundle]
+                             specific_bait_bundle, deep_fishing_bundle, fish_smoker_bundle, pokemon_fishing_bundle]
 
 # In Remixed, the trash items are in the recycling bundle, so we don't use the thematic version of the crab pot bundle that added trash items to it
 fish_tank_bundles_remixed.remove(crab_pot_bundle_thematic)
@@ -837,10 +869,13 @@ calico_bundle = BundleTemplate(CCRoom.bulletin_board, BundleName.calico, calico_
 
 raccoon_bundle = BundleTemplate(CCRoom.bulletin_board, BundleName.raccoon, raccoon_foraging_items, 4, 4)
 
+shiny_pokemon_items = [corsola_shiny, luvdisc_shiny, magikarp_shiny, sandygast_shiny, staryu_shiny, wooper_shiny]
+shiny_pokemon_bundle = PKMNFishBundleTemplate(CCRoom.bulletin_board, PKMNFishBundleName.shiny_pokemon, shiny_pokemon_items, 3, 2)
+
 bulletin_board_bundles_vanilla = [chef_bundle_vanilla, dye_bundle_vanilla, field_research_bundle_vanilla, fodder_bundle_vanilla, enchanter_bundle_vanilla]
 bulletin_board_bundles_thematic = [chef_bundle_thematic, dye_bundle_thematic, field_research_bundle_thematic, fodder_bundle_thematic, enchanter_bundle_thematic]
 bulletin_board_bundles_remixed = [*bulletin_board_bundles_thematic, children_bundle, forager_bundle, home_cook_bundle,
-                                  helper_bundle, spirit_eve_bundle, winter_star_bundle, bartender_bundle, calico_bundle, raccoon_bundle]
+                                  helper_bundle, spirit_eve_bundle, winter_star_bundle, bartender_bundle, calico_bundle, raccoon_bundle, shiny_pokemon_bundle]
 bulletin_board_vanilla = BundleRoomTemplate(CCRoom.bulletin_board, bulletin_board_bundles_vanilla, 5)
 bulletin_board_thematic = BundleRoomTemplate(CCRoom.bulletin_board, bulletin_board_bundles_thematic, 5)
 bulletin_board_remixed = BundleRoomTemplate(CCRoom.bulletin_board, bulletin_board_bundles_remixed, 5)

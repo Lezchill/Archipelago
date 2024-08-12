@@ -3377,3 +3377,6 @@ id,region,name,tags,mod_name
 8389,Beach,Craft Blue Orb,CRAFTSANITY,Pokemon Fish
 8390,Shipping,Shipsanity: Blue Orb,SHIPSANITY,Pokemon Fish
 8391,Shipping,Shipsanity: Heart Scale,SHIPSANITY,Pokemon Fish
+8392,Crafts Room,Pokemon Foraging Bundle,"BUNDLE,COMMUNITY_CENTER_BUNDLE,CRAFTS_ROOM_BUNDLE",Pokemon Fish
+8393,Fish Tank,Pokemon Fishing Bundle,"BUNDLE,COMMUNITY_CENTER_BUNDLE,CRAFTS_ROOM_BUNDLE",Pokemon Fish
+8394,Bulletin Board,Shiny Pokemon Bundle,"BUNDLE,COMMUNITY_CENTER_BUNDLE,CRAFTS_ROOM_BUNDLE",Pokemon Fish

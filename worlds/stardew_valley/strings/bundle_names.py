@@ -106,3 +106,8 @@ class BundleName:
     raccoon_artisan = "Raccoon Artisan"
     raccoon_food = "Raccoon Food"
     raccoon_foraging = "Raccoon Foraging"
+
+class PKMNFishBundleName:
+    pokemon_fishing = cc_bundle("Pokemon Fishing Bundle")
+    pokemon_foraging = cc_bundle("Pokemon Foraging Bundle") 
+    shiny_pokemon = cc_bundle("Shiny Pokemon Bundle")
